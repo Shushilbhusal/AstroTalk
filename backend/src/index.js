@@ -14,7 +14,7 @@ const PORT = 4000;
 /* ---------- middleware ---------- */
 app.use(express.json());
 app.use(cors({
-    origin:"https://astro-talk-shushil.vercel.app/"
+    origin:"https://astro-talk-shushil.vercel.app"
 }))
 /* ---------- routes ---------- */
 router.get("/", (req, res)=>{
