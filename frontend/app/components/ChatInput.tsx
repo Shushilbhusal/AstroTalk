@@ -21,11 +21,11 @@ export default function ChatInput({ onSend }: Props) {
     const userMessage = text;
     setText("");
     setLoading(true);
-
+    console.log(text)
 
     try {
       // Call backend
-      const response = await axios.post("http://localhost:4000/api/chat", {
+      const response = await axios.post("https://astrotalk-2.onrender.com/api/chat", {
         message: userMessage,
       });
 
