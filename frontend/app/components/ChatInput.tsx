@@ -14,12 +14,14 @@ export default function ChatInput({ onSend }: Props) {
 
   const handleSend = async () => {
     if (!text.trim() || loading) return;
+    console.log("message", text)
 
     // Add user message
     onSend({ role: "user", content: text });
     const userMessage = text;
     setText("");
     setLoading(true);
+
 
     try {
       // Call backend
@@ -37,7 +39,7 @@ export default function ChatInput({ onSend }: Props) {
       console.error("Error:", err);
       onSend({
         role: "AI",
-        content: "Sorry, I'm having trouble responding. Please try again.",
+        content: "Sorry, I'm having trouble responding. Please try after 30 sec.",
       });
     } finally {
       setLoading(false);
