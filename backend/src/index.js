@@ -17,6 +17,9 @@ app.use(cors({
     origin:"http://localhost:3000"
 }))
 /* ---------- routes ---------- */
+router.get("/", (req, res)=>{
+  res.send("hello world")
+})
 
 // test route
 router.get("/test", (req, res) => {
